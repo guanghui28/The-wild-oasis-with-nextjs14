@@ -1,15 +1,14 @@
 import Counter from "../components/Counter";
 
 export default async function Page() {
-	const res = await fetch(`https://jsonplaceholder.typicode.com/users`);
+	const res = await fetch(`https://jsonplaceholder.typicode.com/comments`);
 	const data = await res.json();
-	console.log({ data });
 	return (
 		<div>
 			<h1>Cabins Page</h1>
 			<ul>
-				{data.map((user) => (
-					<li key={user.id}>{user.name}</li>
+				{data.map((comment) => (
+					<li key={comment.id}>{comment.name}</li>
 				))}
 			</ul>
 			<Counter />

@@ -1,9 +1,3 @@
-import Navigation from "./components/Navigation";
-
 export default function Page() {
-	return (
-		<div>
-			<Navigation />
-		</div>
-	);
+	return <div>Home Page </div>;
 }

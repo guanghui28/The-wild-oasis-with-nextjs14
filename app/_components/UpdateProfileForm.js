@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 
-export default function UpdateProfileForm({ children }) {
+export default function UpdateProfileForm({ children, guest }) {
 	const [count, setCount] = useState(0);
+	console.log(guest);
 	// CHANGE
 	const countryFlag = "abvc";
 

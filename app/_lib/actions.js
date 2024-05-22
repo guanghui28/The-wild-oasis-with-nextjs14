@@ -6,7 +6,6 @@ import { revalidatePath } from "next/cache";
 
 export async function updateProfile(formData) {
 	const session = await auth();
-	console.log(session);
 	if (!session) throw new Error("You must be logged in first!");
 	const nationalID = formData.get("nationalID");
 	const [nationality, countryFlag] = formData.get("nationality").split("%");

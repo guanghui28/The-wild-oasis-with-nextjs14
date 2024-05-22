@@ -3,7 +3,6 @@ import Link from "next/link";
 
 export default async function Navigation() {
 	const session = await auth();
-	console.log(session);
 	return (
 		<nav className="z-10 text-xl">
 			<ul className="flex items-center gap-16">

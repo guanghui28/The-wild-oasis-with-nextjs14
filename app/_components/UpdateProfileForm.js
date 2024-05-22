@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { updateProfile } from "../_lib/actions";
-import Button from "./Button";
+import SubmitButton from "./SubmitButton";
 
 export default function UpdateProfileForm({ children, guest }) {
 	const { fullName, email, nationality, countryFlag, nationalID } = guest;
@@ -55,7 +55,7 @@ export default function UpdateProfileForm({ children, guest }) {
 			</div>
 
 			<div className="flex justify-end items-center gap-6">
-				<Button />
+				<SubmitButton>Update Profile</SubmitButton>
 			</div>
 		</form>
 	);

@@ -53,7 +53,9 @@ export default async function Page({ params }) {
 				<input name="bookingId" defaultValue={reservationId} hidden />
 
 				<div className="flex justify-end items-center gap-6">
-					<SubmitButton>Update Reservation</SubmitButton>
+					<SubmitButton loadingLabel={"Updating..."}>
+						Update Reservation
+					</SubmitButton>
 				</div>
 			</form>
 		</div>

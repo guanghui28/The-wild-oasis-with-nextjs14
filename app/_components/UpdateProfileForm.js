@@ -1,7 +1,6 @@
-"use client";
-
+import Image from "next/image";
 import { updateProfile } from "../_lib/actions";
-import { useFormStatus } from "react-dom";
+import Button from "./Button";
 
 export default function UpdateProfileForm({ children, guest }) {
 	const { fullName, email, nationality, countryFlag, nationalID } = guest;
@@ -34,11 +33,14 @@ export default function UpdateProfileForm({ children, guest }) {
 			<div className="space-y-2">
 				<div className="flex items-center justify-between">
 					<label htmlFor="nationality">Where are you from?</label>
-					<img
-						src={countryFlag}
-						alt="Country flag"
-						className="h-5 rounded-sm"
-					/>
+					<div className="h-5 rounded-sm relative aspect-video">
+						<Image
+							fill
+							src={countryFlag}
+							alt="Country flag"
+							className="object-cover"
+						/>
+					</div>
 				</div>
 				{children}
 			</div>
@@ -56,17 +58,5 @@ export default function UpdateProfileForm({ children, guest }) {
 				<Button />
 			</div>
 		</form>
-	);
-}
-
-function Button() {
-	const { pending } = useFormStatus();
-	return (
-		<button
-			disabled={pending}
-			className="bg-accent-500 px-8 py-4 text-primary-800 font-semibold hover:bg-accent-600 transition-all disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-300"
-		>
-			{pending ? "Updating..." : "Update Profile"}
-		</button>
 	);
 }
